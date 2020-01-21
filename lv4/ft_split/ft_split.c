@@ -6,7 +6,7 @@
 /*   By: hopham <hopham@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/17 12:00:14 by hopham            #+#    #+#             */
-/*   Updated: 2020/01/07 13:08:43 by hopham           ###   ########.fr       */
+/*   Updated: 2020/01/21 13:10:22 by hopham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	**ft_split(char *str)
 {
+	char	**tab;
 	int		i;
 	int		i2;
 	int		i3;
-	char	**tab;
 
 	i = 0;
 	i2 = 0;
