@@ -6,7 +6,7 @@
 /*   By: HoangPham <HoangPham@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 22:07:37 by HoangPham         #+#    #+#             */
-/*   Updated: 2019/12/30 23:42:37 by HoangPham        ###   ########.fr       */
+/*   Updated: 2020/01/28 11:40:51 by HoangPham        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void    fprime(unsigned int nb)
             prime++;
         }
     }
-
 }
 
 int     main(int ac, char **av)
