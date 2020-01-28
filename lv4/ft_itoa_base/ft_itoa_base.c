@@ -3,93 +3,94 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: HoangPham <HoangPham@student.42.fr>        +#+  +:+       +#+        */
+/*   By: hopham <hopham@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:25:39 by HoangPham         #+#    #+#             */
-/*   Updated: 2020/01/07 11:32:53 by HoangPham        ###   ########.fr       */
+/*   Updated: 2020/01/21 13:34:20 by hopham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-static int  get_len(int num, int base)
+int		get_len(int value, int base)
 {
-    int len;
+	int	i;
 
-    len = 0;
-    while (num)
-    {
-        num = num / base;
-        len++;
-    }
-    return (len);
+	i = 0;
+	while (value)
+	{
+		value = value / base;
+		i++;
+	}
+	return (i);
 }
 
-char    *ft_strnew(int len)
+char	*ft_strnew(int len)
 {
-    char    *str;
+	char	*str;
 
-    str = (char*)malloc(sizeof(char) * len);
-    while (len >= 0)
-    {
-        str[len] = '\0';
-        len--;
-    }
-    return (str);
+	str = (char*)malloc(sizeof(char) * len);
+	len--;
+	while (len >= 0)
+	{
+		str[len] = '\0';
+		len--;
+	}
+	return (str);
 }
 
-char    ft_calculate_char(int mod)
+char	ft_calculate_char(int mod)
 {
-    char    return_char;
+	char	return_char;
 
-    return_char = '0';
-    while (mod)
-    {
-        return_char++;
-        mod--;
-        if (return_char == ':')
-            return_char = 'A';
-    }
-    return (return_char);
+	return_char = '0';
+	while (mod)
+	{
+		return_char++;
+		mod--;
+		if (return_char == ':')
+			return_char == 'A';
+	}
+	return (return_char);
 }
 
-char    *ft_itoa_base(int num, int base)
+char	*ft_itoa_base(int value, int base)
 {
-    char    *str;
-    int     len;
-    int     mod;
-    int     minus_sign;
+	char	*str;
+	int		mod;
+	int		minus_sign;
+	int		len;
 
-    if (num == 0)
-    {
-        str = ft_strnew(1);
-        *str = '0';
-        return (str);
-    }
-    minus_sign = 1;
-    if (base == 10 && num < 0)
-        minus_sign = -1;
-    if (minus_sign == -1)
-        len = get_len(num, base) + 1;
-    else
-        len = get_len(num, base);
-    num = num * minus_sign;
-    str = ft_strnew(len);
-    if (minus_sign == -1)
-        str[0] = '-';
-    len--;
-    while (num)
-    {
-        mod = num % base;
-        num = num / base;
-        str[len] = ft_calculate_char(mod);
-        len--;
-    }
-    return (str);
+	if (value == 0)
+	{
+		str = ft_strnew(1);
+		str[0] = '0';
+		return (str);
+	}
+	minus_sign = 1;
+	if (value < 0 && base == 10)
+		minus_sign = -1;
+	value = value * minus_sign;
+	len = get_len(value, base);
+	if (value < 0 && base == 10)
+		str = ft_strnew(len) + 1;
+	else
+		str = ft_strnew(len);
+	if (minus_sign == -1)
+		str[0] = '-';
+	len--;
+	while (value > 0)
+	{
+		mod = value % base;
+		value = value / base;
+		str[len] = ft_caculate_char(mod);
+		len--;
+	}
+	return (str);
 }
 
-int main(void)
+int			main(void)
 {
     printf("%s", ft_itoa_base(1000, 16));
 }

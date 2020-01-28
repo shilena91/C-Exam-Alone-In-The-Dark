@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: HoangPham <HoangPham@student.42.fr>        +#+  +:+       +#+        */
+/*   By: hopham <hopham@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 15:05:44 by dkaplan           #+#    #+#             */
-/*   Updated: 2020/01/14 11:06:48 by HoangPham        ###   ########.fr       */
+/*   Updated: 2020/01/14 13:02:25 by hopham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void print_tab(char **tab, t_point size)
 int main(void)
 {
 	t_point size = { 8, 5 };
-	t_point begin = { 2, 2 };
+	t_point begin = { 0, 0 };
 	char *area[5];
 	area[0] = "11111111";
 	area[1] = "10001001";
